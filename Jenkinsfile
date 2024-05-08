@@ -24,7 +24,7 @@ pipeline {
                     def branchExists = sh(script: 'git ls-remote --heads origin new-branch', returnStatus: true) == 0
 
                     if (branchExists) {
-                        // If branch exists, push changes to it
+                        // If branch exists, checkout to it
                         sh 'git checkout new-branch'
                     } else {
                         // If branch does not exist, create a new branch
