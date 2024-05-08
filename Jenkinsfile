@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout code from Git
-                git branch: 'main', url: 'https://github.com/PappuYadavOPL/test-opl.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         // Checkout code from Git
+        //         git branch: 'main', url: 'https://github.com/PappuYadavOPL/test-opl.git'
+        //     }
+        // }
         stage('Add File') {
             steps {
                 // Add a txt file to the workspace
