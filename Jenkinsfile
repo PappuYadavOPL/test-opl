@@ -38,7 +38,8 @@ pipeline {
                     sh 'sudo git config --global user.name "Pappu Yadav"'
                     sh 'sudo git add .'
                     sh 'sudo git commit -m "added to new branch"'
-                    sh 'sudo git push origin HEAD:new-branch --force'
+                    sh "git push https://PappuYadavOPL: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@github.com/PappuYadavOPL/test-opl.git HEAD:new-branch --force"
+                    //sh 'sudo git push origin HEAD:new-branch --force'
                 }
             }
         }
