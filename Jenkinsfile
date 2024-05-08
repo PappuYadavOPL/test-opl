@@ -4,12 +4,12 @@ pipeline {
         GIT_CREDENTIALS = credentials('GitHub_Credential') // Use the ID you provided for your credentials
     }
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         // Checkout code from Git
-        //         git branch: 'main', url: 'https://github.com/PappuYadavOPL/test-opl.git'
-        //     }
-        // }
+       stage('Checkout') {
+            steps {
+                // Checkout code from Git using credentials
+                git credentials: GIT_CREDENTIALS, branch: 'main', url: 'https://github.com/PappuYadavOPL/test-opl.git'
+            }
+        }
         stage('Add File') {
             steps {
                 // Add a txt file to the workspace
