@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from Git
-                git branch: 'main', url: 'https://github.com/your/repository.git'
+                git branch: 'main', url: 'https://github.com/PappuYadavOPL/test-opl.git'
             }
         }
         stage('Add File') {
