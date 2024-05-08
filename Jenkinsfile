@@ -14,31 +14,29 @@ pipeline {
         stage('Add File') {
             steps {
                 // Add a txt file to the workspace
-                sh 'echo "This is a test file" > test.txt'
+                sh 'echo "This is a test file" > test2.txt'
             }
         }
-        stage('Check Branch and Push') {
+        stage('Check if branch exists') {
             steps {
-                // Check if the branch exists
                 script {
-                    def branchExists = sh(script: 'git ls-remote --heads origin new-branch', returnStatus: true) == 0
-
+                    def branchExists = sh(script: 'git show-ref --verify --quiet "refs/heads/new-branch"', returnStatus: true) == 0
                     if (branchExists) {
-                        // If branch exists, checkout to it
-                        sh 'git checkout new-branch'
+                        echo "Branch 'new-branch' already exists."
                     } else {
-                        // If branch does not exist, create a new branch
+                        // Create the branch "new-branch"
                         sh 'git checkout -b new-branch'
+                        echo "Branch 'new-branch' created."
                     }
-
-                    // Add all changes
+                }
+            }
+        }
+        stage('Commit and push changes') {
+            steps {
+                script {
                     sh 'git add .'
-
-                    // Commit changes
-                    sh 'git commit -m "Adding test.txt file"'
-
-                    // Push changes to the branch
-                    sh 'git push origin new-branch'
+                    sh 'git commit -m "added to new branch"'
+                    sh 'git push origin HEAD:new-branch --force'
                 }
             }
         }
