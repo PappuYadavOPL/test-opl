@@ -25,7 +25,7 @@ pipeline {
                         echo "Branch 'new-branch' already exists."
                     } else {
                         // Create the branch "new-branch"
-                        sh 'git checkout -b new-branch'
+                        sh 'sudo git checkout -b new-branch'
                         echo "Branch 'new-branch' created."
                     }
                 }
@@ -34,11 +34,11 @@ pipeline {
         stage('Commit and push changes') {
             steps {
                 script {
-                    sh 'git config --global user.email "pappu.yadav@oplinnovate.com"'
-                    sh 'git config --global user.name "Pappu Yadav"'
-                    sh 'git add .'
-                    sh 'git commit -m "added to new branch"'
-                    sh 'git push origin HEAD:new-branch --force'
+                    sh 'sudo git config --global user.email "pappu.yadav@oplinnovate.com"'
+                    sh 'sudo git config --global user.name "Pappu Yadav"'
+                    sh 'sudo git add .'
+                    sh 'sudo git commit -m "added to new branch"'
+                    sh 'sudo git push origin HEAD:new-branch --force'
                 }
             }
         }
