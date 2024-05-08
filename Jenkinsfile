@@ -34,6 +34,8 @@ pipeline {
         stage('Commit and push changes') {
             steps {
                 script {
+                    sh 'git config --global user.email "pappu.yadav@oplinnovate.com"'
+                    sh 'git config --global user.name "Pappu Yadav"'
                     sh 'git add .'
                     sh 'git commit -m "added to new branch"'
                     sh 'git push origin HEAD:new-branch --force'
