@@ -7,7 +7,8 @@ pipeline {
        stage('Checkout') {
             steps {
                 // Checkout code from Git using credentials
-                git credentials: GIT_CREDENTIALS, branch: 'main', url: 'https://github.com/PappuYadavOPL/test-opl.git'
+                git branch: 'main', credentialsId: 'GitHub_Credential', url: 'https://github.com/PappuYadavOPL/test-opl.git'
+                //git credentials: GIT_CREDENTIALS, branch: 'main', url: 'https://github.com/PappuYadavOPL/test-opl.git'
             }
         }
         stage('Add File') {
