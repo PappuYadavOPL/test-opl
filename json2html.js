@@ -1,30 +1,30 @@
 const fs = require('fs');
-
+ 
 const input = process.argv[2];
 const output = process.argv[3];
-
+ 
 if (!input || !output) {
   console.error("Usage: node json2html.js <input.json> <output.html>");
   process.exit(1);
 }
-
+ 
 const data = JSON.parse(fs.readFileSync(input, 'utf8'));
 const vulnerabilities = data.vulnerabilities || [];
 const components = data.components || [];
-
+ 
 function getComponent(ref) {
   return components.find(c => c['bom-ref'] === ref);
 }
-
+ 
 function getSeverityBadge(sev) {
   const s = (sev || '').toLowerCase();
-  if (s === 'critical') return '<span class="badge bg-danger">Critical'</span>;
-  if (s === 'high') return '<span class="badge bg-warning text-dark">High'</span>;
-  if (s === 'medium') return '<span class="badge bg-info text-dark">Medium'</span>;
-  if (s === 'low') return '<span class="badge bg-success">Low'</span>;
-  return '<span class="badge bg-secondary">Unknown'</span>;
+  if (s === 'critical') return '<span class="badge bg-danger">Critical</span>';
+  if (s === 'high') return '<span class="badge bg-warning text-dark">High</span>';
+  if (s === 'medium') return '<span class="badge bg-info text-dark">Medium</span>';
+  if (s === 'low') return '<span class="badge bg-success">Low</span>';
+  return '<span class="badge bg-secondary">Unknown</span>';
 }
-
+ 
 const severityCount = {
   Critical: 0,
   High: 0,
@@ -32,7 +32,7 @@ const severityCount = {
   Low: 0,
   Unknown: 0
 };
-
+ 
 const rows = vulnerabilities.flatMap((vuln, index) => {
   const id = vuln.id || 'N/A';
   const severityRaw = vuln.ratings?.[0]?.severity || 'Unknown';
@@ -41,15 +41,15 @@ const rows = vulnerabilities.flatMap((vuln, index) => {
   const desc = vuln.description || 'N/A';
   const sourceUrl = vuln.source?.url || 'N/A';
   const affects = vuln.affects || [];
-
+ 
   if (severityCount[severity] !== undefined) severityCount[severity]++;
   else severityCount.Unknown++;
-
+ 
   return affects.map((aff, subIndex) => {
     const component = getComponent(aff.ref);
     const compName = component ? `${component.name}@${component.version}` : aff.ref;
     const filePath = component?.properties?.find(p => p.name.includes("location") && p.value)?.value || 'N/A';
-
+ 
     return `
       <tr>
         <td>${index + 1}${affects.length > 1 ? `.${subIndex + 1}` : ''}</td>
@@ -64,7 +64,7 @@ const rows = vulnerabilities.flatMap((vuln, index) => {
     `;
   });
 }).join('\n');
-
+ 
 const html = `
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +84,7 @@ const html = `
 <body>
   <div class="container-fluid">
     <h2 class="mb-4">SBOM Vulnerability Report</h2>
-
+ 
     <div class="summary-badges mb-2">
       <strong>Total Vulnerabilities:</strong> ${vulnerabilities.length}
       <span class="badge bg-danger">Critical: ${severityCount.Critical}</span>
@@ -93,7 +93,7 @@ const html = `
       <span class="badge bg-success">Low: ${severityCount.Low}</span>
       <span class="badge bg-secondary">Unknown: ${severityCount.Unknown}</span>
     </div>
-
+ 
     <div class="filter-container mb-3">
       <label for="severityFilter"><strong>Filter by Severity:</strong></label>
       <select id="severityFilter" class="form-select w-auto d-inline-block">
@@ -105,7 +105,7 @@ const html = `
         <option value="Unknown">Unknown</option>
       </select>
     </div>
-
+ 
     <div class="table-responsive">
       <table id="vulnTable" class="table table-striped table-bordered">
         <thead class="table-dark">
@@ -126,7 +126,7 @@ const html = `
       </table>
     </div>
   </div>
-
+ 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -143,16 +143,16 @@ const html = `
             targets: 2,
             render: function(data, type, row) {
               const s = data.toLowerCase();
-              if (s === 'critical') return '<span class="badge bg-danger">Critical';</span>
-              if (s === 'high') return '<span class="badge bg-warning text-dark">High';</span>
-              if (s === 'medium') return '<span class="badge bg-info text-dark">Medium';</span>
-              if (s === 'low') return '<span class="badge bg-success">Low';</span>
-              return '<span class="badge bg-secondary">Unknown';</span>
+              if (s === 'critical') return '<span class="badge bg-danger">Critical</span>';
+              if (s === 'high') return '<span class="badge bg-warning text-dark">High</span>';
+              if (s === 'medium') return '<span class="badge bg-info text-dark">Medium</span>';
+              if (s === 'low') return '<span class="badge bg-success">Low</span>';
+              return '<span class="badge bg-secondary">Unknown</span>';
             }
           }
         ]
       });
-
+ 
       // Custom severity filter
       $('#severityFilter').on('change', function() {
         const selected = $(this).val();
@@ -167,7 +167,6 @@ const html = `
 </body>
 </html>
 `;
-
+ 
 fs.writeFileSync(output, html, 'utf8');
 console.log(`✅ Filterable report generated at ${output}`);
- 
