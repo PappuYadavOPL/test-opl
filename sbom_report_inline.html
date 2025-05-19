@@ -1,0 +1,1385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SBOM Vulnerability Report</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <style>
+    body { padding: 20px; background-color: #f8f9fa; }
+    .badge { font-size: 0.9em; }
+    .filter-container { margin-bottom: 20px; }
+    .filter-container label { margin-right: 10px; }
+    .summary-badges span { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h2 class="mb-4">SBOM Vulnerability Report</h2>
+ 
+    <div class="summary-badges mb-2">
+      <strong>Total Vulnerabilities:</strong> 107
+      <span class="badge bg-danger">Critical: 13</span>
+      <span class="badge bg-warning text-dark">High: 48</span>
+      <span class="badge bg-info text-dark">Medium: 44</span>
+      <span class="badge bg-success">Low: 2</span>
+      <span class="badge bg-secondary">Unknown: 0</span>
+    </div>
+ 
+    <div class="filter-container mb-3">
+      <label for="severityFilter"><strong>Filter by Severity:</strong></label>
+      <select id="severityFilter" class="form-select w-auto d-inline-block">
+        <option value="">All</option>
+        <option value="Critical">Critical</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+    </div>
+ 
+    <div class="table-responsive">
+      <table id="vulnTable" class="table table-striped table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Vuln ID</th>
+            <th>Severity</th>
+            <th>CVSS Score</th>
+            <th>Affected Component</th>
+            <th>File Path</th>
+            <th>Source URL</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td>1</td>
+        <td>GHSA-6xx3-rg99-gc3p</td>
+        <td>Medium</td>
+        <td>5.1</td>
+        <td>bcprov-jdk15on@1.51</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-6xx3-rg99-gc3p" target="_blank">https://github.com/advisories/GHSA-6xx3-rg99-gc3p</a></td>
+        <td>Timing based private key exposure in Bouncy Castle</td>
+      </tr>
+    
+
+      <tr>
+        <td>2</td>
+        <td>GHSA-72m5-fvvv-55m6</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>bcprov-jdk15on@1.51</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-72m5-fvvv-55m6" target="_blank">https://github.com/advisories/GHSA-72m5-fvvv-55m6</a></td>
+        <td>Observable Differences in Behavior to Error Inputs in Bouncy Castle</td>
+      </tr>
+    
+
+      <tr>
+        <td>3</td>
+        <td>GHSA-8xfc-gm6g-vgpv</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>bcprov-jdk15on@1.51</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-8xfc-gm6g-vgpv" target="_blank">https://github.com/advisories/GHSA-8xfc-gm6g-vgpv</a></td>
+        <td>Bouncy Castle certificate parsing issues cause high CPU usage during parameter evaluation.</td>
+      </tr>
+    
+
+      <tr>
+        <td>4</td>
+        <td>GHSA-hr8g-6v94-x4m9</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>bcprov-jdk15on@1.51</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-hr8g-6v94-x4m9" target="_blank">https://github.com/advisories/GHSA-hr8g-6v94-x4m9</a></td>
+        <td>Bouncy Castle For Java LDAP injection vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>5</td>
+        <td>GHSA-v435-xc8x-wvr9</td>
+        <td>Medium</td>
+        <td>5.9</td>
+        <td>bcprov-jdk15on@1.51</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-v435-xc8x-wvr9" target="_blank">https://github.com/advisories/GHSA-v435-xc8x-wvr9</a></td>
+        <td>Bouncy Castle affected by timing side-channel for RSA key exchange ("The Marvin Attack")</td>
+      </tr>
+    
+
+      <tr>
+        <td>6</td>
+        <td>GHSA-wjxj-5m7g-mg7q</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>bcprov-jdk15on@1.51</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-wjxj-5m7g-mg7q" target="_blank">https://github.com/advisories/GHSA-wjxj-5m7g-mg7q</a></td>
+        <td>Bouncy Castle Denial of Service (DoS)</td>
+      </tr>
+    
+
+      <tr>
+        <td>7</td>
+        <td>GHSA-fjq5-5j5f-mvxh</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>commons-collections@3.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-fjq5-5j5f-mvxh" target="_blank">https://github.com/advisories/GHSA-fjq5-5j5f-mvxh</a></td>
+        <td>Deserialization of Untrusted Data in Apache commons collections</td>
+      </tr>
+    
+
+      <tr>
+        <td>8</td>
+        <td>GHSA-6hgm-866r-3cjv</td>
+        <td>High</td>
+        <td>N/A</td>
+        <td>commons-collections@3.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-6hgm-866r-3cjv" target="_blank">https://github.com/advisories/GHSA-6hgm-866r-3cjv</a></td>
+        <td>Insecure Deserialization in Apache Commons Collection</td>
+      </tr>
+    
+
+      <tr>
+        <td>9</td>
+        <td>GHSA-78wr-2p64-hpwj</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>commons-io@2.3</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-78wr-2p64-hpwj" target="_blank">https://github.com/advisories/GHSA-78wr-2p64-hpwj</a></td>
+        <td>Apache Commons IO: Possible denial of service attack on untrusted input to XmlStreamReader</td>
+      </tr>
+    
+
+      <tr>
+        <td>10</td>
+        <td>GHSA-78wr-2p64-hpwj</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>commons-io@2.3</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-78wr-2p64-hpwj" target="_blank">https://github.com/advisories/GHSA-78wr-2p64-hpwj</a></td>
+        <td>Apache Commons IO: Possible denial of service attack on untrusted input to XmlStreamReader</td>
+      </tr>
+    
+
+      <tr>
+        <td>11</td>
+        <td>GHSA-gwrp-pvrq-jmwv</td>
+        <td>Medium</td>
+        <td>4.8</td>
+        <td>commons-io@2.3</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-gwrp-pvrq-jmwv" target="_blank">https://github.com/advisories/GHSA-gwrp-pvrq-jmwv</a></td>
+        <td>Path Traversal and Improper Input Validation in Apache Commons IO</td>
+      </tr>
+    
+
+      <tr>
+        <td>12</td>
+        <td>GHSA-gwrp-pvrq-jmwv</td>
+        <td>Medium</td>
+        <td>4.8</td>
+        <td>commons-io@2.3</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-gwrp-pvrq-jmwv" target="_blank">https://github.com/advisories/GHSA-gwrp-pvrq-jmwv</a></td>
+        <td>Path Traversal and Improper Input Validation in Apache Commons IO</td>
+      </tr>
+    
+
+      <tr>
+        <td>13</td>
+        <td>GHSA-599f-7c49-w659</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>commons-text@1.6</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-599f-7c49-w659" target="_blank">https://github.com/advisories/GHSA-599f-7c49-w659</a></td>
+        <td>Arbitrary code execution in Apache Commons Text</td>
+      </tr>
+    
+
+      <tr>
+        <td>14</td>
+        <td>GHSA-hwj3-m3p6-hj38</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>dom4j@1.1</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-hwj3-m3p6-hj38" target="_blank">https://github.com/advisories/GHSA-hwj3-m3p6-hj38</a></td>
+        <td>dom4j allows External Entities by default which might enable XXE attacks</td>
+      </tr>
+    
+
+      <tr>
+        <td>15</td>
+        <td>GHSA-6pcc-3rfx-4gpm</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>dom4j@1.1</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-6pcc-3rfx-4gpm" target="_blank">https://github.com/advisories/GHSA-6pcc-3rfx-4gpm</a></td>
+        <td>Dom4j contains a XML Injection vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>16</td>
+        <td>GHSA-4jrv-ppp4-jm57</td>
+        <td>High</td>
+        <td>7.7</td>
+        <td>gson@2.8.6</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-4jrv-ppp4-jm57" target="_blank">https://github.com/advisories/GHSA-4jrv-ppp4-jm57</a></td>
+        <td>Deserialization of Untrusted Data in Gson</td>
+      </tr>
+    
+
+      <tr>
+        <td>17</td>
+        <td>GHSA-4jrv-ppp4-jm57</td>
+        <td>High</td>
+        <td>7.7</td>
+        <td>gson@2.8.6</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-4jrv-ppp4-jm57" target="_blank">https://github.com/advisories/GHSA-4jrv-ppp4-jm57</a></td>
+        <td>Deserialization of Untrusted Data in Gson</td>
+      </tr>
+    
+
+      <tr>
+        <td>18</td>
+        <td>GHSA-7g45-4rm6-3mm3</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>guava@18.0</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-7g45-4rm6-3mm3" target="_blank">https://github.com/advisories/GHSA-7g45-4rm6-3mm3</a></td>
+        <td>Guava vulnerable to insecure use of temporary directory</td>
+      </tr>
+    
+
+      <tr>
+        <td>19</td>
+        <td>GHSA-mvr2-9pj6-7w5j</td>
+        <td>Medium</td>
+        <td>5.9</td>
+        <td>guava@18.0</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-mvr2-9pj6-7w5j" target="_blank">https://github.com/advisories/GHSA-mvr2-9pj6-7w5j</a></td>
+        <td>Denial of Service in Google Guava</td>
+      </tr>
+    
+
+      <tr>
+        <td>20</td>
+        <td>GHSA-5mg8-w23w-74h3</td>
+        <td>Low</td>
+        <td>3.3</td>
+        <td>guava@18.0</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-5mg8-w23w-74h3" target="_blank">https://github.com/advisories/GHSA-5mg8-w23w-74h3</a></td>
+        <td>Information Disclosure in Guava</td>
+      </tr>
+    
+
+      <tr>
+        <td>21</td>
+        <td>GHSA-gv87-q66h-4277</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>itextpdf@5.5.9</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-gv87-q66h-4277" target="_blank">https://github.com/advisories/GHSA-gv87-q66h-4277</a></td>
+        <td>Command injection in itext7-core</td>
+      </tr>
+    
+
+      <tr>
+        <td>22</td>
+        <td>GHSA-gv87-q66h-4277</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>itextpdf@5.5.9</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-gv87-q66h-4277" target="_blank">https://github.com/advisories/GHSA-gv87-q66h-4277</a></td>
+        <td>Command injection in itext7-core</td>
+      </tr>
+    
+
+      <tr>
+        <td>23</td>
+        <td>GHSA-86p9-x5pw-94qx</td>
+        <td>High</td>
+        <td>8.8</td>
+        <td>itextpdf@5.5.9</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-86p9-x5pw-94qx" target="_blank">https://github.com/advisories/GHSA-86p9-x5pw-94qx</a></td>
+        <td>Improper Restriction of XML External Entity Reference in  iText</td>
+      </tr>
+    
+
+      <tr>
+        <td>24</td>
+        <td>GHSA-86p9-x5pw-94qx</td>
+        <td>High</td>
+        <td>8.8</td>
+        <td>itextpdf@5.5.9</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-86p9-x5pw-94qx" target="_blank">https://github.com/advisories/GHSA-86p9-x5pw-94qx</a></td>
+        <td>Improper Restriction of XML External Entity Reference in  iText</td>
+      </tr>
+    
+
+      <tr>
+        <td>25</td>
+        <td>GHSA-57j2-w4cx-62h2</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>jackson-databind@2.13.1</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-57j2-w4cx-62h2" target="_blank">https://github.com/advisories/GHSA-57j2-w4cx-62h2</a></td>
+        <td>Deeply nested json in jackson-databind</td>
+      </tr>
+    
+
+      <tr>
+        <td>26</td>
+        <td>GHSA-jjjh-jjxp-wpff</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>jackson-databind@2.13.1</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-jjjh-jjxp-wpff" target="_blank">https://github.com/advisories/GHSA-jjjh-jjxp-wpff</a></td>
+        <td>Uncontrolled Resource Consumption in Jackson-databind</td>
+      </tr>
+    
+
+      <tr>
+        <td>27</td>
+        <td>GHSA-rgv9-q543-rqg4</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>jackson-databind@2.13.1</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-rgv9-q543-rqg4" target="_blank">https://github.com/advisories/GHSA-rgv9-q543-rqg4</a></td>
+        <td>Uncontrolled Resource Consumption in FasterXML jackson-databind</td>
+      </tr>
+    
+
+      <tr>
+        <td>28</td>
+        <td>GHSA-3vqj-43w4-2q58</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>json@20171018</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-3vqj-43w4-2q58" target="_blank">https://github.com/advisories/GHSA-3vqj-43w4-2q58</a></td>
+        <td>json stack overflow vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>29</td>
+        <td>GHSA-3vqj-43w4-2q58</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>json@20171018</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-3vqj-43w4-2q58" target="_blank">https://github.com/advisories/GHSA-3vqj-43w4-2q58</a></td>
+        <td>json stack overflow vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>30</td>
+        <td>GHSA-4jq9-2xhw-jpx7</td>
+        <td>High</td>
+        <td>N/A</td>
+        <td>json@20171018</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-4jq9-2xhw-jpx7" target="_blank">https://github.com/advisories/GHSA-4jq9-2xhw-jpx7</a></td>
+        <td>Java: DoS Vulnerability in JSON-JAVA</td>
+      </tr>
+    
+
+      <tr>
+        <td>31</td>
+        <td>GHSA-4jq9-2xhw-jpx7</td>
+        <td>High</td>
+        <td>N/A</td>
+        <td>json@20171018</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-4jq9-2xhw-jpx7" target="_blank">https://github.com/advisories/GHSA-4jq9-2xhw-jpx7</a></td>
+        <td>Java: DoS Vulnerability in JSON-JAVA</td>
+      </tr>
+    
+
+      <tr>
+        <td>32</td>
+        <td>GHSA-m72m-mhq2-9p6c</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>jsoup@1.10.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-m72m-mhq2-9p6c" target="_blank">https://github.com/advisories/GHSA-m72m-mhq2-9p6c</a></td>
+        <td>Uncaught Exception in jsoup</td>
+      </tr>
+    
+
+      <tr>
+        <td>33</td>
+        <td>GHSA-m72m-mhq2-9p6c</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>jsoup@1.10.2</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-m72m-mhq2-9p6c" target="_blank">https://github.com/advisories/GHSA-m72m-mhq2-9p6c</a></td>
+        <td>Uncaught Exception in jsoup</td>
+      </tr>
+    
+
+      <tr>
+        <td>34</td>
+        <td>GHSA-gp7f-rwcx-9369</td>
+        <td>Medium</td>
+        <td>6.1</td>
+        <td>jsoup@1.10.2</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-gp7f-rwcx-9369" target="_blank">https://github.com/advisories/GHSA-gp7f-rwcx-9369</a></td>
+        <td>jsoup may not sanitize code injection XSS attempts if SafeList.preserveRelativeLinks is enabled</td>
+      </tr>
+    
+
+      <tr>
+        <td>35</td>
+        <td>GHSA-gp7f-rwcx-9369</td>
+        <td>Medium</td>
+        <td>6.1</td>
+        <td>jsoup@1.10.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-gp7f-rwcx-9369" target="_blank">https://github.com/advisories/GHSA-gp7f-rwcx-9369</a></td>
+        <td>jsoup may not sanitize code injection XSS attempts if SafeList.preserveRelativeLinks is enabled</td>
+      </tr>
+    
+
+      <tr>
+        <td>36</td>
+        <td>GHSA-vmq6-5m68-f53m</td>
+        <td>High</td>
+        <td>7.1</td>
+        <td>logback-classic@1.2.9</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-vmq6-5m68-f53m" target="_blank">https://github.com/advisories/GHSA-vmq6-5m68-f53m</a></td>
+        <td>logback serialization vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>37</td>
+        <td>GHSA-vmq6-5m68-f53m</td>
+        <td>High</td>
+        <td>7.1</td>
+        <td>logback-core@1.2.9</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-vmq6-5m68-f53m" target="_blank">https://github.com/advisories/GHSA-vmq6-5m68-f53m</a></td>
+        <td>logback serialization vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>38</td>
+        <td>GHSA-pr98-23f8-jwxv</td>
+        <td>Medium</td>
+        <td>N/A</td>
+        <td>logback-core@1.2.9</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-pr98-23f8-jwxv" target="_blank">https://github.com/advisories/GHSA-pr98-23f8-jwxv</a></td>
+        <td>QOS.CH logback-core Expression Language Injection vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>39</td>
+        <td>GHSA-6v67-2wr5-gvf4</td>
+        <td>Low</td>
+        <td>N/A</td>
+        <td>logback-core@1.2.9</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-6v67-2wr5-gvf4" target="_blank">https://github.com/advisories/GHSA-6v67-2wr5-gvf4</a></td>
+        <td>QOS.CH logback-core Server-Side Request Forgery vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>40</td>
+        <td>GHSA-2f88-5hg8-9x2x</td>
+        <td>Critical</td>
+        <td>9.1</td>
+        <td>maven-compat@3.2.5</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-2f88-5hg8-9x2x" target="_blank">https://github.com/advisories/GHSA-2f88-5hg8-9x2x</a></td>
+        <td>Origin Validation Error in Apache Maven</td>
+      </tr>
+    
+
+      <tr>
+        <td>41</td>
+        <td>GHSA-2f88-5hg8-9x2x</td>
+        <td>Critical</td>
+        <td>9.1</td>
+        <td>maven-core@3.2.5</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-2f88-5hg8-9x2x" target="_blank">https://github.com/advisories/GHSA-2f88-5hg8-9x2x</a></td>
+        <td>Origin Validation Error in Apache Maven</td>
+      </tr>
+    
+
+      <tr>
+        <td>42</td>
+        <td>GHSA-4c32-xmgj-2g98</td>
+        <td>High</td>
+        <td>7.8</td>
+        <td>pdfbox@1.8.7</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-4c32-xmgj-2g98" target="_blank">https://github.com/advisories/GHSA-4c32-xmgj-2g98</a></td>
+        <td>High severity vulnerability that affects org.apache.pdfbox:pdfbox</td>
+      </tr>
+    
+
+      <tr>
+        <td>43</td>
+        <td>GHSA-gx96-vgf7-hwfg</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>pdfbox@1.8.7</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-gx96-vgf7-hwfg" target="_blank">https://github.com/advisories/GHSA-gx96-vgf7-hwfg</a></td>
+        <td>In Apache PDFBox a carefully crafted PDF file can trigger an extremely long running computation</td>
+      </tr>
+    
+
+      <tr>
+        <td>44</td>
+        <td>GHSA-j2xq-pfff-mvgg</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>pdfbox@1.8.7</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-j2xq-pfff-mvgg" target="_blank">https://github.com/advisories/GHSA-j2xq-pfff-mvgg</a></td>
+        <td>Loop with Unreachable Exit Condition in Apache PDFBox</td>
+      </tr>
+    
+
+      <tr>
+        <td>45</td>
+        <td>GHSA-g6ph-x5wf-g337</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>plexus-utils@3.0.20</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-g6ph-x5wf-g337" target="_blank">https://github.com/advisories/GHSA-g6ph-x5wf-g337</a></td>
+        <td>plexus-codehaus vulnerable to directory traversal</td>
+      </tr>
+    
+
+      <tr>
+        <td>46</td>
+        <td>GHSA-jcwr-x25h-x5fh</td>
+        <td>Medium</td>
+        <td>4.3</td>
+        <td>plexus-utils@3.0.20</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-jcwr-x25h-x5fh" target="_blank">https://github.com/advisories/GHSA-jcwr-x25h-x5fh</a></td>
+        <td>codehaus-plexus vulnerable to XML injection</td>
+      </tr>
+    
+
+      <tr>
+        <td>47</td>
+        <td>GHSA-523c-xh4g-mh5m</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>poi@3.13</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-523c-xh4g-mh5m" target="_blank">https://github.com/advisories/GHSA-523c-xh4g-mh5m</a></td>
+        <td>Denial of Service in Apache POI</td>
+      </tr>
+    
+
+      <tr>
+        <td>48</td>
+        <td>GHSA-523c-xh4g-mh5m</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>poi@3.13</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-523c-xh4g-mh5m" target="_blank">https://github.com/advisories/GHSA-523c-xh4g-mh5m</a></td>
+        <td>Denial of Service in Apache POI</td>
+      </tr>
+    
+
+      <tr>
+        <td>49</td>
+        <td>GHSA-78vv-qj73-h9m5</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>poi@3.13</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-78vv-qj73-h9m5" target="_blank">https://github.com/advisories/GHSA-78vv-qj73-h9m5</a></td>
+        <td>Improper Restriction of Recursive Entity References in DTDs in Apache POI</td>
+      </tr>
+    
+
+      <tr>
+        <td>50</td>
+        <td>GHSA-78vv-qj73-h9m5</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>poi@3.13</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-78vv-qj73-h9m5" target="_blank">https://github.com/advisories/GHSA-78vv-qj73-h9m5</a></td>
+        <td>Improper Restriction of Recursive Entity References in DTDs in Apache POI</td>
+      </tr>
+    
+
+      <tr>
+        <td>51</td>
+        <td>GHSA-9jwc-q6j3-8g9g</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>poi@3.13</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-9jwc-q6j3-8g9g" target="_blank">https://github.com/advisories/GHSA-9jwc-q6j3-8g9g</a></td>
+        <td>Improper Restriction of XML External Entity Reference in Apache POI</td>
+      </tr>
+    
+
+      <tr>
+        <td>52</td>
+        <td>GHSA-9jwc-q6j3-8g9g</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>poi@3.13</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-9jwc-q6j3-8g9g" target="_blank">https://github.com/advisories/GHSA-9jwc-q6j3-8g9g</a></td>
+        <td>Improper Restriction of XML External Entity Reference in Apache POI</td>
+      </tr>
+    
+
+      <tr>
+        <td>53</td>
+        <td>GHSA-gmg8-593g-7mv3</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>poi-ooxml@3.13</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-gmg8-593g-7mv3" target="_blank">https://github.com/advisories/GHSA-gmg8-593g-7mv3</a></td>
+        <td>Apache POI OOXML Vulnerable to Improper Input Validation in OOXML File Parsing</td>
+      </tr>
+    
+
+      <tr>
+        <td>54</td>
+        <td>GHSA-gmg8-593g-7mv3</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>poi-ooxml@3.13</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-gmg8-593g-7mv3" target="_blank">https://github.com/advisories/GHSA-gmg8-593g-7mv3</a></td>
+        <td>Apache POI OOXML Vulnerable to Improper Input Validation in OOXML File Parsing</td>
+      </tr>
+    
+
+      <tr>
+        <td>55</td>
+        <td>GHSA-3mc7-4q67-w48m</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>snakeyaml@1.29</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-3mc7-4q67-w48m" target="_blank">https://github.com/advisories/GHSA-3mc7-4q67-w48m</a></td>
+        <td>Uncontrolled Resource Consumption in snakeyaml</td>
+      </tr>
+    
+
+      <tr>
+        <td>56</td>
+        <td>GHSA-mjmj-j48q-9wg2</td>
+        <td>High</td>
+        <td>8.3</td>
+        <td>snakeyaml@1.29</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-mjmj-j48q-9wg2" target="_blank">https://github.com/advisories/GHSA-mjmj-j48q-9wg2</a></td>
+        <td>SnakeYaml Constructor Deserialization Remote Code Execution</td>
+      </tr>
+    
+
+      <tr>
+        <td>57</td>
+        <td>GHSA-98wm-3w3q-mw94</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>snakeyaml@1.29</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-98wm-3w3q-mw94" target="_blank">https://github.com/advisories/GHSA-98wm-3w3q-mw94</a></td>
+        <td>snakeYAML before 1.31 vulnerable to Denial of Service due to Out-of-bounds Write</td>
+      </tr>
+    
+
+      <tr>
+        <td>58</td>
+        <td>GHSA-9w3m-gqgf-c4p9</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>snakeyaml@1.29</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-9w3m-gqgf-c4p9" target="_blank">https://github.com/advisories/GHSA-9w3m-gqgf-c4p9</a></td>
+        <td>snakeYAML before 1.32 vulnerable to Denial of Service due to Out-of-bounds Write</td>
+      </tr>
+    
+
+      <tr>
+        <td>59</td>
+        <td>GHSA-c4r9-r8fh-9vj2</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>snakeyaml@1.29</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-c4r9-r8fh-9vj2" target="_blank">https://github.com/advisories/GHSA-c4r9-r8fh-9vj2</a></td>
+        <td>snakeYAML before 1.31 vulnerable to Denial of Service due to Out-of-bounds Write</td>
+      </tr>
+    
+
+      <tr>
+        <td>60</td>
+        <td>GHSA-hhhw-99gj-p3c3</td>
+        <td>Medium</td>
+        <td>5.5</td>
+        <td>snakeyaml@1.29</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-hhhw-99gj-p3c3" target="_blank">https://github.com/advisories/GHSA-hhhw-99gj-p3c3</a></td>
+        <td>snakeYAML before 1.31 vulnerable to Denial of Service due to Out-of-bounds Write</td>
+      </tr>
+    
+
+      <tr>
+        <td>61</td>
+        <td>GHSA-w37g-rhq8-7m4j</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>snakeyaml@1.29</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-w37g-rhq8-7m4j" target="_blank">https://github.com/advisories/GHSA-w37g-rhq8-7m4j</a></td>
+        <td>Snakeyaml vulnerable to Stack overflow leading to denial of service</td>
+      </tr>
+    
+
+      <tr>
+        <td>62</td>
+        <td>GHSA-36p3-wjmg-h94x</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>spring-beans@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-36p3-wjmg-h94x" target="_blank">https://github.com/advisories/GHSA-36p3-wjmg-h94x</a></td>
+        <td>Remote Code Execution in Spring Framework</td>
+      </tr>
+    
+
+      <tr>
+        <td>63</td>
+        <td>GHSA-hh26-6xwr-ggv7</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>spring-beans@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-hh26-6xwr-ggv7" target="_blank">https://github.com/advisories/GHSA-hh26-6xwr-ggv7</a></td>
+        <td>Denial of service in Spring Framework</td>
+      </tr>
+    
+
+      <tr>
+        <td>64</td>
+        <td>GHSA-rc42-6c7j-7h5r</td>
+        <td>High</td>
+        <td>7.3</td>
+        <td>spring-boot@2.6.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-rc42-6c7j-7h5r" target="_blank">https://github.com/advisories/GHSA-rc42-6c7j-7h5r</a></td>
+        <td>Spring Boot EndpointRequest.to() creates wrong matcher if actuator endpoint is not exposed</td>
+      </tr>
+    
+
+      <tr>
+        <td>65</td>
+        <td>GHSA-jjfh-589g-3hjx</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>spring-boot-actuator@2.6.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-jjfh-589g-3hjx" target="_blank">https://github.com/advisories/GHSA-jjfh-589g-3hjx</a></td>
+        <td>Spring Boot Actuator denial of service vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>66</td>
+        <td>GHSA-g5h3-w546-pj7f</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>spring-boot-actuator-autoconfigure@2.6.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-g5h3-w546-pj7f" target="_blank">https://github.com/advisories/GHSA-g5h3-w546-pj7f</a></td>
+        <td>Spring Boot Security Bypass with Wildcard Pattern Matching on Cloud Foundry</td>
+      </tr>
+    
+
+      <tr>
+        <td>67</td>
+        <td>GHSA-xf96-w227-r7c4</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>spring-boot-autoconfigure@2.6.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-xf96-w227-r7c4" target="_blank">https://github.com/advisories/GHSA-xf96-w227-r7c4</a></td>
+        <td>Spring Boot Welcome Page Denial of Service</td>
+      </tr>
+    
+
+      <tr>
+        <td>68</td>
+        <td>GHSA-g5mm-vmx4-3rg7</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>spring-context@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-g5mm-vmx4-3rg7" target="_blank">https://github.com/advisories/GHSA-g5mm-vmx4-3rg7</a></td>
+        <td>Improper handling of case sensitivity in Spring Framework</td>
+      </tr>
+    
+
+      <tr>
+        <td>69</td>
+        <td>GHSA-4gc7-5j7h-4qph</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>spring-context@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-4gc7-5j7h-4qph" target="_blank">https://github.com/advisories/GHSA-4gc7-5j7h-4qph</a></td>
+        <td>Spring Framework DataBinder Case Sensitive Match Exception</td>
+      </tr>
+    
+
+      <tr>
+        <td>70</td>
+        <td>GHSA-wxqc-pxw9-g2p8</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>spring-expression@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-wxqc-pxw9-g2p8" target="_blank">https://github.com/advisories/GHSA-wxqc-pxw9-g2p8</a></td>
+        <td>Spring Framework vulnerable to denial of service</td>
+      </tr>
+    
+
+      <tr>
+        <td>71</td>
+        <td>GHSA-558x-2xjg-6232</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>spring-expression@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-558x-2xjg-6232" target="_blank">https://github.com/advisories/GHSA-558x-2xjg-6232</a></td>
+        <td>Allocation of Resources Without Limits or Throttling in Spring Framework</td>
+      </tr>
+    
+
+      <tr>
+        <td>72</td>
+        <td>GHSA-564r-hj7v-mcr5</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>spring-expression@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-564r-hj7v-mcr5" target="_blank">https://github.com/advisories/GHSA-564r-hj7v-mcr5</a></td>
+        <td>Spring Framework vulnerable to denial of service via specially crafted SpEL expression</td>
+      </tr>
+    
+
+      <tr>
+        <td>73</td>
+        <td>GHSA-9cmq-m9j5-mvww</td>
+        <td>Medium</td>
+        <td>4.3</td>
+        <td>spring-expression@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-9cmq-m9j5-mvww" target="_blank">https://github.com/advisories/GHSA-9cmq-m9j5-mvww</a></td>
+        <td>Spring Framework vulnerable to Denial of Service</td>
+      </tr>
+    
+
+      <tr>
+        <td>74</td>
+        <td>GHSA-4wrc-f8pq-fpqp</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>spring-web@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-4wrc-f8pq-fpqp" target="_blank">https://github.com/advisories/GHSA-4wrc-f8pq-fpqp</a></td>
+        <td>Pivotal Spring Framework contains unsafe Java deserialization methods</td>
+      </tr>
+    
+
+      <tr>
+        <td>75</td>
+        <td>GHSA-2wrp-6fg6-hmc5</td>
+        <td>High</td>
+        <td>8.1</td>
+        <td>spring-web@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-2wrp-6fg6-hmc5" target="_blank">https://github.com/advisories/GHSA-2wrp-6fg6-hmc5</a></td>
+        <td>Spring Framework URL Parsing with Host Validation</td>
+      </tr>
+    
+
+      <tr>
+        <td>76</td>
+        <td>GHSA-ccgv-vj62-xf9h</td>
+        <td>High</td>
+        <td>8.1</td>
+        <td>spring-web@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-ccgv-vj62-xf9h" target="_blank">https://github.com/advisories/GHSA-ccgv-vj62-xf9h</a></td>
+        <td>Spring Web vulnerable to Open Redirect or Server Side Request Forgery</td>
+      </tr>
+    
+
+      <tr>
+        <td>77</td>
+        <td>GHSA-hgjh-9rj2-g67j</td>
+        <td>High</td>
+        <td>8.1</td>
+        <td>spring-web@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-hgjh-9rj2-g67j" target="_blank">https://github.com/advisories/GHSA-hgjh-9rj2-g67j</a></td>
+        <td>Spring Framework URL Parsing with Host Validation Vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>78</td>
+        <td>GHSA-2rmj-mq67-h97g</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>spring-web@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-2rmj-mq67-h97g" target="_blank">https://github.com/advisories/GHSA-2rmj-mq67-h97g</a></td>
+        <td>Spring Framework DoS via conditional HTTP request</td>
+      </tr>
+    
+
+      <tr>
+        <td>79</td>
+        <td>GHSA-36p3-wjmg-h94x</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>spring-webmvc@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-36p3-wjmg-h94x" target="_blank">https://github.com/advisories/GHSA-36p3-wjmg-h94x</a></td>
+        <td>Remote Code Execution in Spring Framework</td>
+      </tr>
+    
+
+      <tr>
+        <td>80</td>
+        <td>GHSA-cx7f-g6mp-7hqm</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>spring-webmvc@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-cx7f-g6mp-7hqm" target="_blank">https://github.com/advisories/GHSA-cx7f-g6mp-7hqm</a></td>
+        <td>Path traversal vulnerability in functional web frameworks</td>
+      </tr>
+    
+
+      <tr>
+        <td>81</td>
+        <td>GHSA-g5vr-rgqm-vf78</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>spring-webmvc@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-g5vr-rgqm-vf78" target="_blank">https://github.com/advisories/GHSA-g5vr-rgqm-vf78</a></td>
+        <td>Spring Framework Path Traversal vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>82</td>
+        <td>GHSA-w3c8-7r8f-9jp8</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>spring-webmvc@5.3.14</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-w3c8-7r8f-9jp8" target="_blank">https://github.com/advisories/GHSA-w3c8-7r8f-9jp8</a></td>
+        <td>Spring MVC controller vulnerable to a DoS attack</td>
+      </tr>
+    
+
+      <tr>
+        <td>83</td>
+        <td>GHSA-5ggr-mpgw-3mgx</td>
+        <td>High</td>
+        <td>8.2</td>
+        <td>struts-core@1.3.8</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-5ggr-mpgw-3mgx" target="_blank">https://github.com/advisories/GHSA-5ggr-mpgw-3mgx</a></td>
+        <td>Improper Input Validation in Apache Struts</td>
+      </tr>
+    
+
+      <tr>
+        <td>84</td>
+        <td>GHSA-7jw3-5q4w-89qg</td>
+        <td>High</td>
+        <td>8.1</td>
+        <td>struts-core@1.3.8</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-7jw3-5q4w-89qg" target="_blank">https://github.com/advisories/GHSA-7jw3-5q4w-89qg</a></td>
+        <td>Improper Input Validation in Apache Struts</td>
+      </tr>
+    
+
+      <tr>
+        <td>85</td>
+        <td>GHSA-cvvx-r33m-v7pq</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>struts-core@1.3.8</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-cvvx-r33m-v7pq" target="_blank">https://github.com/advisories/GHSA-cvvx-r33m-v7pq</a></td>
+        <td>Improper Input Validation in Apache Struts</td>
+      </tr>
+    
+
+      <tr>
+        <td>86</td>
+        <td>GHSA-9848-v244-962p</td>
+        <td>Medium</td>
+        <td>N/A</td>
+        <td>struts-core@1.3.8</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-9848-v244-962p" target="_blank">https://github.com/advisories/GHSA-9848-v244-962p</a></td>
+        <td>Apache Struts XSS</td>
+      </tr>
+    
+
+      <tr>
+        <td>87</td>
+        <td>GHSA-83qj-6fr2-vhqg</td>
+        <td>Critical</td>
+        <td>9.8</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-83qj-6fr2-vhqg" target="_blank">https://github.com/advisories/GHSA-83qj-6fr2-vhqg</a></td>
+        <td>Apache Tomcat: Potential RCE and/or information disclosure and/or information corruption with partial PUT</td>
+      </tr>
+    
+
+      <tr>
+        <td>88</td>
+        <td>GHSA-27hp-xhwr-wr2m</td>
+        <td>High</td>
+        <td>N/A</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-27hp-xhwr-wr2m" target="_blank">https://github.com/advisories/GHSA-27hp-xhwr-wr2m</a></td>
+        <td>Apache Tomcat Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>89</td>
+        <td>GHSA-5j33-cvvr-w245</td>
+        <td>High</td>
+        <td>9.8</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-5j33-cvvr-w245" target="_blank">https://github.com/advisories/GHSA-5j33-cvvr-w245</a></td>
+        <td>Apache Tomcat Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>90</td>
+        <td>GHSA-fccv-jmmp-qg76</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-fccv-jmmp-qg76" target="_blank">https://github.com/advisories/GHSA-fccv-jmmp-qg76</a></td>
+        <td>Apache Tomcat Improper Input Validation vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>91</td>
+        <td>GHSA-hfrx-6qgj-fp6c</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-hfrx-6qgj-fp6c" target="_blank">https://github.com/advisories/GHSA-hfrx-6qgj-fp6c</a></td>
+        <td>Apache Commons FileUpload denial of service vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>92</td>
+        <td>GHSA-p22x-g9px-3945</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-p22x-g9px-3945" target="_blank">https://github.com/advisories/GHSA-p22x-g9px-3945</a></td>
+        <td>Apache Tomcat may reject request containing invalid Content-Length header</td>
+      </tr>
+    
+
+      <tr>
+        <td>93</td>
+        <td>GHSA-rq2w-37h9-vg94</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-rq2w-37h9-vg94" target="_blank">https://github.com/advisories/GHSA-rq2w-37h9-vg94</a></td>
+        <td>Apache Tomcat improperly escapes input from JsonErrorReportValve</td>
+      </tr>
+    
+
+      <tr>
+        <td>94</td>
+        <td>GHSA-wm9w-rjj3-j356</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-wm9w-rjj3-j356" target="_blank">https://github.com/advisories/GHSA-wm9w-rjj3-j356</a></td>
+        <td>Apache Tomcat - Denial of Service</td>
+      </tr>
+    
+
+      <tr>
+        <td>95</td>
+        <td>GHSA-7w75-32cg-r6g2</td>
+        <td>Medium</td>
+        <td>7.5</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-7w75-32cg-r6g2" target="_blank">https://github.com/advisories/GHSA-7w75-32cg-r6g2</a></td>
+        <td>Apache Tomcat Denial of Service due to improper input validation vulnerability for HTTP/2 requests</td>
+      </tr>
+    
+
+      <tr>
+        <td>96</td>
+        <td>GHSA-g8pj-r55q-5c2v</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-g8pj-r55q-5c2v" target="_blank">https://github.com/advisories/GHSA-g8pj-r55q-5c2v</a></td>
+        <td>Apache Tomcat Incomplete Cleanup vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>97</td>
+        <td>GHSA-q3mw-pvr8-9ggc</td>
+        <td>Medium</td>
+        <td>6.1</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-q3mw-pvr8-9ggc" target="_blank">https://github.com/advisories/GHSA-q3mw-pvr8-9ggc</a></td>
+        <td>Apache Tomcat Open Redirect vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>98</td>
+        <td>GHSA-qppj-fm5r-hxr3</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-qppj-fm5r-hxr3" target="_blank">https://github.com/advisories/GHSA-qppj-fm5r-hxr3</a></td>
+        <td>HTTP/2 Stream Cancellation Attack</td>
+      </tr>
+    
+
+      <tr>
+        <td>99</td>
+        <td>GHSA-r6j3-px5g-cq3x</td>
+        <td>Medium</td>
+        <td>5.3</td>
+        <td>tomcat-embed-core@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-r6j3-px5g-cq3x" target="_blank">https://github.com/advisories/GHSA-r6j3-px5g-cq3x</a></td>
+        <td>Apache Tomcat Improper Input Validation vulnerability</td>
+      </tr>
+    
+
+      <tr>
+        <td>100</td>
+        <td>GHSA-v682-8vv8-vpwr</td>
+        <td>Medium</td>
+        <td>6.3</td>
+        <td>tomcat-embed-websocket@9.0.56</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-v682-8vv8-vpwr" target="_blank">https://github.com/advisories/GHSA-v682-8vv8-vpwr</a></td>
+        <td>Denial of Service via incomplete cleanup vulnerability in Apache Tomcat</td>
+      </tr>
+    
+
+      <tr>
+        <td>101</td>
+        <td>GHSA-59j4-wjwp-mw9m</td>
+        <td>High</td>
+        <td>8.8</td>
+        <td>velocity@1.6.2</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-59j4-wjwp-mw9m" target="_blank">https://github.com/advisories/GHSA-59j4-wjwp-mw9m</a></td>
+        <td>Sandbox Bypass in Apache Velocity Engine</td>
+      </tr>
+    
+
+      <tr>
+        <td>102</td>
+        <td>GHSA-fh63-4r66-jc7v</td>
+        <td>Medium</td>
+        <td>6.1</td>
+        <td>velocity-tools@2.0</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-fh63-4r66-jc7v" target="_blank">https://github.com/advisories/GHSA-fh63-4r66-jc7v</a></td>
+        <td>Cross-site scripting (XSS) in Apache Velocity Tools</td>
+      </tr>
+    
+
+      <tr>
+        <td>103</td>
+        <td>GHSA-fh63-4r66-jc7v</td>
+        <td>Medium</td>
+        <td>6.1</td>
+        <td>velocity-tools@2.0</td>
+        <td>/pom.xml</td>
+        <td><a href="https://github.com/advisories/GHSA-fh63-4r66-jc7v" target="_blank">https://github.com/advisories/GHSA-fh63-4r66-jc7v</a></td>
+        <td>Cross-site scripting (XSS) in Apache Velocity Tools</td>
+      </tr>
+    
+
+      <tr>
+        <td>104</td>
+        <td>GHSA-3f7h-mf4q-vrm4</td>
+        <td>Medium</td>
+        <td>6.5</td>
+        <td>woodstox-core@6.2.7</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-3f7h-mf4q-vrm4" target="_blank">https://github.com/advisories/GHSA-3f7h-mf4q-vrm4</a></td>
+        <td>Denial of Service due to parser crash</td>
+      </tr>
+    
+
+      <tr>
+        <td>105</td>
+        <td>GHSA-9339-86wc-4qgf</td>
+        <td>High</td>
+        <td>7.5</td>
+        <td>xalan@2.6.0</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-9339-86wc-4qgf" target="_blank">https://github.com/advisories/GHSA-9339-86wc-4qgf</a></td>
+        <td>Apache Xalan Java XSLT library integer truncation issue when processing malicious XSLT stylesheets</td>
+      </tr>
+    
+
+      <tr>
+        <td>106</td>
+        <td>GHSA-rc2w-r4jq-7pfx</td>
+        <td>High</td>
+        <td>N/A</td>
+        <td>xalan@2.6.0</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-rc2w-r4jq-7pfx" target="_blank">https://github.com/advisories/GHSA-rc2w-r4jq-7pfx</a></td>
+        <td>Improper Authorization in Apache Xalan-Java</td>
+      </tr>
+    
+
+      <tr>
+        <td>107</td>
+        <td>GHSA-mw3r-pfmg-xp92</td>
+        <td>Critical</td>
+        <td>9.1</td>
+        <td>xmlbeans@2.6.0</td>
+        <td>/target/service-loans-pabl-16.0.0.jar</td>
+        <td><a href="https://github.com/advisories/GHSA-mw3r-pfmg-xp92" target="_blank">https://github.com/advisories/GHSA-mw3r-pfmg-xp92</a></td>
+        <td>Improper Restriction of Recursive Entity References in Apache XMLBeans</td>
+      </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const table = $('#vulnTable').DataTable({
+        responsive: true,
+        pageLength: 10,
+        lengthMenu: [10, 25, 50, 100],
+        language: { search: "Search:" },
+        columnDefs: [
+          {
+            targets: 2,
+            render: function(data, type, row) {
+              const s = data.toLowerCase();
+              if (s === 'critical') return '<span class="badge bg-danger">Critical</span>';
+              if (s === 'high') return '<span class="badge bg-warning text-dark">High</span>';
+              if (s === 'medium') return '<span class="badge bg-info text-dark">Medium</span>';
+              if (s === 'low') return '<span class="badge bg-success">Low</span>';
+              return '<span class="badge bg-secondary">Unknown</span>';
+            }
+          }
+        ]
+      });
+ 
+      // Custom severity filter
+      $('#severityFilter').on('change', function() {
+        const selected = $(this).val();
+        if (selected) {
+          table.column(2).search('^' + selected + '$', true, false).draw();
+        } else {
+          table.column(2).search('').draw();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
